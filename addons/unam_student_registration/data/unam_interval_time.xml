@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+
+          <record id="unam_interval_hour" model="unam.interval.time">
+            <field name="name">48 Horas</field>
+            <field name="interval_number">48</field>
+            <field name="interval_type">hours</field>
+          </record>
+
+          <record id="unam_interval_week" model="unam.interval.time">
+            <field name="name">2 Semanas</field>
+            <field name="interval_number">2</field>
+            <field name="interval_type">weeks</field>
+          </record>
+
+          <record id="unam_interval_month" model="unam.interval.time">
+            <field name="name">6 Meses</field>
+            <field name="interval_number">6</field>
+            <field name="interval_type">months</field>
+          </record>
+
+    </data>
+</odoo>

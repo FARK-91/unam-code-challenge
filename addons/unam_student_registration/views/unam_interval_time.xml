@@ -1,0 +1,64 @@
+<odoo>
+  <data>
+    <!-- Interval Time list view -->
+
+    <record model="ir.ui.view" id="unam_interval_time_tree_view">
+      <field name="name">unam.interval.time.tree.view</field>
+      <field name="model">unam.interval.time</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Student form view -->
+    <record model="ir.ui.view" id="unam_interval_time_form_view">
+      <field name="name">unam.interval.time.form.view</field>
+      <field name="model">unam.interval.time</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <div class="oe_title mb24">
+              <h1>
+                <field name="name" force_save="1"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <label for="interval_number" string="Execute Every"/>
+                  <div>
+                      <field name="interval_number" class="oe_inline"/>
+                      <field name="interval_type" class="oe_inline"/>
+                  </div>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="unam_interval_time_action_window">
+      <field name="name">Interval Time</field>
+      <field name="res_model">unam.interval.time</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- menu categories -->
+
+    <menuitem name="Settings" 
+      id="unam_interval_time_setting" 
+      parent="unam_student_registration.unam_registration_menu_root"
+      groups="unam_student_registration.group_student_registration_admin,unam_student_registration.group_student_registration_manager,unam_student_registration.group_student_registration_teacher" 
+      sequence="20"/>
+
+    <!-- actions -->
+
+    <menuitem name="Interval Time" id="unam_interval_time_menu" parent="unam_interval_time_setting"
+              action="unam_interval_time_action_window" sequence="20"/>
+
+  </data>
+</odoo>

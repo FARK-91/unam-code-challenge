@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+
+          <record id="unam_subject_1" model="unam.subject">
+            <field name="name">Arte y Humanidades</field>
+            <field name="credit_limit">3</field>
+            <field name="description">Geografía, Historia e Historia del Arte, Lengua y Literatura</field>
+          </record>
+
+          <record id="unam_subject_2" model="unam.subject">
+            <field name="name">Ciencias</field>
+            <field name="credit_limit">4</field>
+            <field name="description">Ciencias de la Tierra y del Medio Ambiente</field>
+          </record>
+
+          <record id="unam_subject_3" model="unam.subject">
+            <field name="name">Ingeniería y Arquitectura</field>
+            <field name="credit_limit">5</field>
+            <field name="description">Nuevas Tecnologías</field>
+          </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,61 @@
+<odoo>
+  <data>
+    <!-- Subject list view -->
+
+    <record model="ir.ui.view" id="unam_subject_tree_view">
+      <field name="name">unam.subject.tree.view</field>
+      <field name="model">unam.subject</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description" optional="hide"/>
+          <field name="credit_limit"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Subject form view -->
+    <record model="ir.ui.view" id="unam_subject_form_view">
+      <field name="name">unam.subject.form.view</field>
+      <field name="model">unam.subject</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <div class="oe_title mb24">
+              <h1>
+                <field name="name" placeholder="Math"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <field name="credit_limit"/>
+              </group>
+              <group>
+                <field name="description"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="unam_subject_action_window">
+      <field name="name">Subject Registration</field>
+      <field name="res_model">unam.subject</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- actions -->
+
+    <menuitem 
+      name="Subjects" 
+      id="unam_subject" 
+      parent="unam_student_registration.unam_interval_time_setting"
+      action="unam_subject_action_window"
+      sequence="5"/>
+
+  </data>
+</odoo>

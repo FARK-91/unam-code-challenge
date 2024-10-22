@@ -1,0 +1,71 @@
+<odoo>
+  <data>
+    <!-- Course list view -->
+
+    <record model="ir.ui.view" id="unam_course_tree_view">
+      <field name="name">unam.course.tree.view</field>
+      <field name="model">unam.course</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="start_date"/>
+          <field name="interval_id" optional="show"/>
+          <field name="student_limit" optional="show"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Student form view -->
+    <record model="ir.ui.view" id="unam_course_form_view">
+      <field name="name">unam.course.form.view</field>
+      <field name="model">unam.course</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <div class="oe_title mb24">
+              <h1>
+                <field name="name" placeholder="Cálculo II"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <field name="start_date"/>
+                <field name="interval_id"/>
+              </group>
+              <group>
+                <field name="student_limit"/>
+              </group>
+            </group>
+            <div class="oe_title mb24">
+              <field name="teacher_subject_ids" nolabel="1" mode="tree">
+                <tree string="Teachers / Subjects" editable="bottom">
+                  <field name="subject_id"/>
+                  <field name="teacher_id"/>
+                </tree>
+              </field>
+            </div>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="unam_course_action_window">
+      <field name="name">Course Registration</field>
+      <field name="res_model">unam.course</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- actions -->
+
+    <menuitem 
+      name="Courses" 
+      id="unam_course" 
+      parent="unam_student_registration.unam_interval_time_setting"
+      action="unam_course_action_window"
+      sequence="15"/>
+
+  </data>
+</odoo>
